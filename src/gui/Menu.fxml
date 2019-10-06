@@ -1,8 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.MenuControl">
+   <children>
+      <Pane layoutY="250.0" prefHeight="200.0" prefWidth="800.0">
+         <children>
+            <HBox prefHeight="200.0" prefWidth="800.0">
+               <children>
+                  <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="125.0" prefWidth="125.0" text=" ">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/iconNhanVien.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" layoutX="60.0" layoutY="40.0" prefHeight="125.0" prefWidth="125.0" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/iconKhachHang.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" layoutX="251.0" layoutY="40.0" prefHeight="125.0" prefWidth="125.0" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/iconHoaDon.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="125.0" prefWidth="125.0" text=" ">
+                     <graphic>
+                        <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/iconThongKe.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets left="50.0" top="30.0" />
+               </padding>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane layoutY="50.0" prefHeight="200.0" prefWidth="800.0">
+         <children>
+            <Pane layoutX="33.0" layoutY="38.0">
+               <children>
+                  <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/iconUser.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Separator layoutX="158.0" layoutY="102.0" prefHeight="0.0" prefWidth="642.0" />
+            <Label layoutX="158.0" layoutY="55.0" text="Name :">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="263.0" layoutY="55.0" text="Name User">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <JFXButton fx:id="btnClose" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="734.0" onMouseClicked="#handleButtonEvent" prefHeight="50.0" prefWidth="50.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/iconClose.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXDatePicker defaultColor="#030bffe0" layoutX="404.0" layoutY="15.0" />
+   </children>
 </AnchorPane>
-

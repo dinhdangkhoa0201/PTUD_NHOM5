@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutY="145.0" prefHeight="655.0" prefWidth="1280.0">
+        <columns>
+          <TableColumn prefWidth="102.0" text="Mã Nhân Viên" />
+          <TableColumn prefWidth="322.0" text="Họ Tên" />
+            <TableColumn prefWidth="104.0" text="Giới Tính" />
+            <TableColumn prefWidth="160.0" text="Ngày Sinh" />
+            <TableColumn prefWidth="328.0" text="Email" />
+            <TableColumn prefWidth="263.0" text="Số Điện Thoại" />
+        </columns>
+      </TableView>
+      <HBox prefHeight="100.0" prefWidth="1280.0">
+         <children>
+            <Label text="Quản Lý Nhân Viên">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </Label>
+            <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="50.0" prefWidth="50.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/iconThem.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="100.0" top="20.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" layoutX="414.0" layoutY="30.0" prefHeight="50.0" prefWidth="50.0" text=" ">
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/iconCapnhat.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <HBox.margin>
+                  <Insets left="50.0" top="20.0" />
+               </HBox.margin>
+            </JFXButton>
+            <JFXTextField prefHeight="44.0" prefWidth="365.0">
+               <HBox.margin>
+                  <Insets left="50.0" top="25.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="50.0" prefWidth="50.0" text=" ">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/iconTimKiem.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.LoginControl">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #0ff;">
+         <children>
+            <Pane layoutX="190.0" layoutY="180.0" prefHeight="120.0" prefWidth="120.0">
+               <children>
+                  <ImageView fitHeight="120.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/wolf.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <JFXTextField fx:id="txtUser" layoutX="572.0" layoutY="126.0" prefHeight="50.0" prefWidth="370.0" promptText="email" text="khoacyruss">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="826.0" layoutY="300.0" text="Forgot Password?" textFill="#1100ffba">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Label>
+      <JFXButton fx:id="btnSignIn" layoutX="572.0" layoutY="347.0" onMouseClicked="#handleButtonAction" prefHeight="50.0" prefWidth="370.0" ripplerFill="RED" text="Sign in" textFill="#f20000">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </JFXButton>
+      <Separator layoutX="573.0" layoutY="430.0" prefHeight="3.0" prefWidth="144.0" />
+      <Separator layoutX="802.0" layoutY="432.0" prefHeight="3.0" prefWidth="144.0" />
+      <Label layoutX="751.0" layoutY="422.0" text="Or">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnSignUp" layoutX="575.0" layoutY="470.0" onMouseClicked="#handleButtonAction" prefHeight="50.0" prefWidth="370.0" text="Sign up" textFill="#76ff9d">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="645.0" layoutY="14.0" text="Login" textFill="#1500db">
+         <font>
+            <Font name="VNI-Helve-Bold" size="64.0" />
+         </font>
+      </Label>
+      <JFXPasswordField fx:id="txtPassword" layoutX="572.0" layoutY="211.0" prefHeight="50.0" prefWidth="370.0" promptText="password" text="123456">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </JFXPasswordField>
+      <Label fx:id="lblError" layoutX="575.0" layoutY="282.0" />
+      <JFXButton fx:id="btnCloseWindown" layoutX="934.0" layoutY="14.0" onMouseClicked="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/closewindown.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

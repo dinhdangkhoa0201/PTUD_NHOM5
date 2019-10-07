@@ -18,7 +18,7 @@
          <children>
             <HBox prefHeight="200.0" prefWidth="800.0">
                <children>
-                  <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="125.0" prefWidth="125.0" text=" ">
+                  <JFXButton fx:id="btnQuanLyNhanVien" contentDisplay="CENTER" graphicTextGap="0.0" onMouseClicked="#handleButtonAction" prefHeight="125.0" prefWidth="125.0" text=" ">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -30,7 +30,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" layoutX="60.0" layoutY="40.0" prefHeight="125.0" prefWidth="125.0" text=" ">
+                  <JFXButton fx:id="btnQuanLyKhachHang" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="60.0" layoutY="40.0" onMouseClicked="#handleButtonAction" prefHeight="125.0" prefWidth="125.0" text=" ">
                      <graphic>
                         <ImageView fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -97,7 +97,7 @@
             </Label>
          </children>
       </Pane>
-      <JFXButton fx:id="btnClose" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="734.0" onMouseClicked="#handleButtonEvent" prefHeight="50.0" prefWidth="50.0" text=" ">
+      <JFXButton fx:id="btnClose" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="734.0" onMouseClicked="#handleButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>

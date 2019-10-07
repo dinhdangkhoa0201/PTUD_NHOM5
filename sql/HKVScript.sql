@@ -31,7 +31,6 @@ go
 
 create table UserPassword
 (
-	ID int primary key,
 	Password varchar(20),
 	UserNameNV char(10),
 	UserNameKH char(10),
@@ -39,6 +38,11 @@ create table UserPassword
 	constraint FK_User_NhanVien foreign key (UserNameNV) references NhanVien(MaNV) 
 )
 go
+
+alter table UserPassword add ID integer identity not null
+go
+
+
 
 create table KhachHangLienQuan
 (
@@ -84,4 +88,43 @@ create table HoaDon
 )
 go
 
+
+create function PhatSinhMaKH()
+returns int
+as
+	begin
+		declare @tong int
+		select @tong = (select COUNT(*) from KhachHang)
+	return @tong
+end
+go
+
+select dbo.PhatSinhMaKH()
+
+insert KhachHang values
+(dbo.PhatSinhMaKH(), N'Đinh Đăng Khoa', 0, '1999/10/2', '025825273', N'Củ Chi', 'dinhdangkhoa0201@gmail.com', '0937602105')
+go
+
+create function dbo.PhatSinhMaNV()
+returns int
+as 
+	begin
+	declare @tong int
+	select @tong = (select COUNT(*) from NhanVien) +1
+	return @tong
+end
+go
+
+insert NhanVien values
+(dbo.PhatSinhMaNV(), N'Phan San Vô', 0, '1999/6/6', GETDATE(), 'votech99@gmail.com', '1234567890')
+go
+
+insert UserPassword(UserNameNV, UserNameKH, Password)
+
+insert UserPassword (UserNameNV, UserNameKH, Password) values
+(null, 1, '123456'),
+(2, null, '123456')
+go
+
 use master
+go

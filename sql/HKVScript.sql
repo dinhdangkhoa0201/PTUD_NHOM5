@@ -11,6 +11,7 @@ create table NhanVien
 	GioiTinh bit,
 	NgaySinh date,
 	NgayVaoLam date,
+	DiaChi nvarchar(MAX),
 	Email varchar(MAX),
 	DienThoai varchar(12)
 )
@@ -22,7 +23,6 @@ create table KhachHang
 	HoTenKH nvarchar(MAX) not null,
 	GioiTinh bit,
 	NgaySinh date,
-	CMND nvarchar(12),
 	DiaChi nvarchar(MAX),
 	Email varchar(MAX),
 	DienThoai varchar(12)
@@ -95,6 +95,7 @@ as
 	begin
 		declare @tong int
 		select @tong = (select COUNT(*) from KhachHang)
+		set @tong = @tong + 1
 	return @tong
 end
 go
@@ -102,7 +103,7 @@ go
 select dbo.PhatSinhMaKH()
 
 insert KhachHang values
-(dbo.PhatSinhMaKH(), N'Đinh Đăng Khoa', 0, '1999/10/2', '025825273', N'Củ Chi', 'dinhdangkhoa0201@gmail.com', '0937602105')
+(dbo.PhatSinhMaKH(), N'Đinh Đăng Khoa', 0, '1999/10/2', N'Củ Chi', 'dinhdangkhoa0201@gmail.com', '0937602105')
 go
 
 create function dbo.PhatSinhMaNV()
@@ -110,20 +111,18 @@ returns int
 as 
 	begin
 	declare @tong int
-	select @tong = (select COUNT(*) from NhanVien) +1
+	select @tong = (select COUNT(*) from NhanVien) + 1
 	return @tong
 end
 go
 
 insert NhanVien values
-(dbo.PhatSinhMaNV(), N'Phan San Vô', 0, '1999/6/6', GETDATE(), 'votech99@gmail.com', '1234567890')
+(dbo.PhatSinhMaNV(), N'Phan San Vô', 0, '1999/6/6', GETDATE(), N'Bạc Liêu','votech99@gmail.com', '1234567890')
 go
-
-insert UserPassword(UserNameNV, UserNameKH, Password)
 
 insert UserPassword (UserNameNV, UserNameKH, Password) values
 (null, 1, '123456'),
-(2, null, '123456')
+(1, null, '123456')
 go
 
 use master

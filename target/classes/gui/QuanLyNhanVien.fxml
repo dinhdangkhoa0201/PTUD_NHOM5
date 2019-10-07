@@ -12,19 +12,21 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.QuanLyNhanVienControl">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.QuanLyNhanVienControl">
    <children>
-      <TableView layoutY="145.0" prefHeight="655.0" prefWidth="1280.0">
+      <TableView fx:id="tableNhanVien" layoutY="145.0" prefHeight="625.0" prefWidth="1366.0">
         <columns>
-          <TableColumn prefWidth="102.0" text="Mã Nhân Viên" />
-          <TableColumn prefWidth="322.0" text="Họ Tên" />
-            <TableColumn prefWidth="104.0" text="Giới Tính" />
-            <TableColumn prefWidth="160.0" text="Ngày Sinh" />
-            <TableColumn prefWidth="328.0" text="Email" />
-            <TableColumn prefWidth="263.0" text="Số Điện Thoại" />
+          <TableColumn fx:id="col_manv" prefWidth="102.0" text="Mã Nhân Viên" />
+          <TableColumn fx:id="col_hoten" prefWidth="281.9999694824219" text="Họ Tên" />
+            <TableColumn fx:id="col_gioitinh" prefWidth="105.0" text="Giới Tính" />
+            <TableColumn fx:id="col_ngaysinh" prefWidth="115.0" text="Ngày Sinh" />
+            <TableColumn fx:id="col_ngayvaolam" prefWidth="144.0" text="Ngày Vào Làm" />
+            <TableColumn fx:id="col_diachi" prefWidth="212.0" text="Địa Chỉ" />
+            <TableColumn fx:id="col_email" prefWidth="208.0" text="Email" />
+            <TableColumn fx:id="col_dienthoai" prefWidth="197.0" text="Điện Thoại" />
         </columns>
       </TableView>
-      <HBox prefHeight="100.0" prefWidth="1280.0">
+      <HBox layoutY="63.0" prefHeight="83.0" prefWidth="1366.0">
          <children>
             <Label prefHeight="45.0" prefWidth="299.0" text="Quản Lý Nhân Viên">
                <font>
@@ -46,7 +48,7 @@
                   <Insets left="100.0" top="20.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" layoutX="414.0" layoutY="30.0" prefHeight="50.0" prefWidth="50.0" text=" ">
+            <JFXButton fx:id="btnReLoad" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="414.0" layoutY="30.0" onMouseClicked="#handlButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -78,22 +80,28 @@
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="btnClose" contentDisplay="CENTER" graphicTextGap="0.0" onMouseClicked="#handlButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
-               <HBox.margin>
-                  <Insets left="160.0" />
-               </HBox.margin>
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/iconClose.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
          </children>
          <padding>
             <Insets left="50.0" />
          </padding>
       </HBox>
+      <JFXButton fx:id="btnClose" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="1300.0" onMouseClicked="#handlButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/iconClose.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnBack" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="2.0" onMouseClicked="#handlButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/iconBack.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

@@ -7,16 +7,22 @@ public class NhanVien {
 	private String hoTen;
 	private String gioiTinh;
 	private LocalDate ngaySinh;
-	private String email;
+	private LocalDate ngayVaoLam;
 	private String diaChi;
-	public NhanVien(String maNV, String hoTen, String gioiTinh, LocalDate ngaySinh, String email, String diaChi) {
+	private String email;
+	private String soDienThoai;
+	
+	public NhanVien(String maNV, String hoTen, String gioiTinh, LocalDate ngaySinh, LocalDate ngayVaoLam, String diaChi,
+			String email, String soDienThoai) {
 		super();
 		this.maNV = maNV;
 		this.hoTen = hoTen;
 		this.gioiTinh = gioiTinh;
 		this.ngaySinh = ngaySinh;
-		this.email = email;
+		this.ngayVaoLam = ngayVaoLam;
 		this.diaChi = diaChi;
+		this.email = email;
+		this.soDienThoai = soDienThoai;
 	}
 	public NhanVien() {
 		super();
@@ -56,6 +62,18 @@ public class NhanVien {
 	}
 	public void setDiaChi(String diaChi) {
 		this.diaChi = diaChi;
+	}
+	public LocalDate getNgayVaoLam() {
+		return ngayVaoLam;
+	}
+	public void setNgayVaoLam(LocalDate ngayVaoLam) {
+		this.ngayVaoLam = ngayVaoLam;
+	}
+	public String getSoDienThoai() {
+		return soDienThoai;
+	}
+	public void setSoDienThoai(String soDienThoai) {
+		this.soDienThoai = soDienThoai;
 	}
 	@Override
 	public String toString() {

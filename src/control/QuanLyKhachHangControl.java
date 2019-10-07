@@ -9,7 +9,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
-import entities.NhanVien;
+import entities.KhachHang;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -27,28 +27,25 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class QuanLyNhanVienControl implements Initializable{
-	@FXML JFXButton btnBack;
-	@FXML JFXButton btnClose;
-	@FXML JFXButton btnReLoad;
+public class QuanLyKhachHangControl implements Initializable{
+	@FXML private JFXButton btnBack;
+	@FXML private JFXButton btnClose;
+	@FXML private JFXButton btnReLoad;
 	
-	@FXML private TableView<NhanVien> tableNhanVien;
-	@FXML private TableColumn<NhanVien, String> col_manv;
-	@FXML private TableColumn<NhanVien, String> col_hoten;
-	@FXML private TableColumn<NhanVien, String> col_gioitinh;
-	@FXML private TableColumn<NhanVien, String> col_ngaysinh;
-	@FXML private TableColumn<NhanVien, String> col_ngayvaolam;
-	@FXML private TableColumn<NhanVien, String> col_diachi;
-	@FXML private TableColumn<NhanVien, String> col_email;
-	@FXML private TableColumn<NhanVien, String> col_dienthoai;
-
+	@FXML private TableView<KhachHang> tableKhachHang;
+	@FXML private TableColumn<KhachHang, String> col_makh;
+	@FXML private TableColumn<KhachHang, String> col_hoten;
+	@FXML private TableColumn<KhachHang, String> col_gioitinh;
+	@FXML private TableColumn<KhachHang, String> col_ngaysinh;
+	@FXML private TableColumn<KhachHang, String> col_email;
+	@FXML private TableColumn<KhachHang, String> col_dienthoai;
+	@FXML private TableColumn<KhachHang, String> col_diachi;
 	
+	private ObservableList<KhachHang> data;
 	private Connection con = null;
 	private PreparedStatement ps = null;
-	private ResultSet rs = null;
+	private ResultSet rs = null;	
 	
-	private ObservableList<NhanVien> data;
-
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
@@ -59,23 +56,22 @@ public class QuanLyNhanVienControl implements Initializable{
 	}
 	
 	private void setCellTable() {
-		col_manv.setCellValueFactory(new PropertyValueFactory<>("maNV"));
+		col_makh.setCellValueFactory(new PropertyValueFactory<>("maKH"));
 		col_hoten.setCellValueFactory(new PropertyValueFactory<>("hoTen"));
 		col_gioitinh.setCellValueFactory(new PropertyValueFactory<>("gioiTinh"));
 		col_ngaysinh.setCellValueFactory(new PropertyValueFactory<>("ngaySinh"));
-		col_ngayvaolam.setCellValueFactory(new PropertyValueFactory<>("ngayVaoLam"));
-		col_diachi.setCellValueFactory(new PropertyValueFactory<>("diaChi"));
 		col_email.setCellValueFactory(new PropertyValueFactory<>("email"));
 		col_dienthoai.setCellValueFactory(new PropertyValueFactory<>("soDienThoai"));
+		col_diachi.setCellValueFactory(new PropertyValueFactory<>("diaChi"));
 	}
 	
 	private void loadDataFromDatabase() {
-		tableNhanVien.getItems().clear();
+		tableKhachHang.getItems().clear();
 		try {
-			ps = con.prepareStatement("SELECT * FROM NhanVien");
+			ps = con.prepareStatement("SELECT * FROM KhachHang");
 			rs = ps.executeQuery();
 			while(rs.next()) {
-				String maNV = rs.getString(1);
+				String maKH = rs.getString(1);
 				String hoTen = rs.getString(2);
 				System.out.println(hoTen);
 				boolean bit = rs.getBoolean(3);
@@ -85,19 +81,19 @@ public class QuanLyNhanVienControl implements Initializable{
 				else
 					gioiTinh = "Nam";
 				LocalDate ngaySinh = rs.getDate(4).toLocalDate();
-				LocalDate ngayVaoLam = rs.getDate(5).toLocalDate();
-				String diaChi = rs.getString(6);
-				String email = rs.getString(7);
-				String soDienThoai = rs.getString(8);
-				NhanVien nhanVien = new NhanVien(maNV, hoTen, gioiTinh, ngaySinh, ngayVaoLam, diaChi, email, soDienThoai);
-				data.add(nhanVien);
+				String diaChi = rs.getString(5);
+				String email = rs.getString(6);
+				String soDienThoai = rs.getString(7);
+				KhachHang khachHang = new KhachHang(maKH, hoTen, gioiTinh, ngaySinh, email, soDienThoai, diaChi);
+				data.add(khachHang);
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-		tableNhanVien.setItems(data);
+		tableKhachHang.setItems(data);
 	}
-
+	
+	
 	@FXML
 	private void handlButtonAction(MouseEvent e) {
 		if(e.getSource() == btnClose) {
@@ -139,5 +135,14 @@ public class QuanLyNhanVienControl implements Initializable{
 			loadDataFromDatabase();
 		}
 	}
+	
+//	public QuanLyKhachHangControl() {
+//		// TODO Auto-generated constructor stub
+//		loadDataFromDatabase();
+//	}
+//	
+//	public static void main(String[] args) {
+//		new QuanLyKhachHangControl();
+//	}
 
 }

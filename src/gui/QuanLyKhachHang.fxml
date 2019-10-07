@@ -12,29 +12,30 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.QuanLyKhachHangControl">
    <children>
-      <TableView layoutY="169.0" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tableKhachHang" layoutY="145.0" prefHeight="625.0" prefWidth="1366.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="col_makh" prefWidth="97.0" resizable="false" text="Mã Nhân Viên" />
+          <TableColumn fx:id="col_hoten" prefWidth="252.99996948242188" text="Họ Tên" />
+            <TableColumn fx:id="col_gioitinh" prefWidth="96.0" text="Giới Tính" />
+            <TableColumn fx:id="col_ngaysinh" prefWidth="113.0" text="Ngày Sinh" />
+            <TableColumn fx:id="col_diachi" prefWidth="224.0" text="Địa Chỉ" />
+            <TableColumn fx:id="col_email" prefWidth="351.0" text="Email" />
+            <TableColumn fx:id="col_dienthoai" minWidth="0.0" prefWidth="231.0" text="Số Điện Thoại" />
         </columns>
       </TableView>
-      <HBox prefHeight="100.0" prefWidth="1280.0">
+      <HBox layoutY="64.0" prefHeight="81.0" prefWidth="1366.0">
          <children>
-            <Label text="Label Name">
-               <HBox.margin>
-                  <Insets left="50.0" top="20.0" />
-               </HBox.margin>
+            <Label prefHeight="45.0" prefWidth="299.0" text="Quản Lý Khách Hàng">
                <font>
-                  <Font size="20.0" />
+                  <Font size="30.0" />
                </font>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
             </Label>
             <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="50.0" prefWidth="50.0" text=" ">
-               <HBox.margin>
-                  <Insets left="50.0" />
-               </HBox.margin>
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -42,8 +43,11 @@
                      </image>
                   </ImageView>
                </graphic>
+               <HBox.margin>
+                  <Insets left="100.0" top="20.0" />
+               </HBox.margin>
             </JFXButton>
-            <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" layoutX="215.0" layoutY="10.0" prefHeight="50.0" prefWidth="50.0" text=" ">
+            <JFXButton fx:id="btnReLoad" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="414.0" layoutY="30.0" onMouseClicked="#handlButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
                <graphic>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -52,12 +56,51 @@
                   </ImageView>
                </graphic>
                <HBox.margin>
-                  <Insets left="50.0" />
+                  <Insets left="50.0" top="20.0" />
                </HBox.margin>
             </JFXButton>
-            <JFXTextField />
-            <JFXButton />
+            <JFXTextField prefHeight="44.0" prefWidth="365.0">
+               <HBox.margin>
+                  <Insets left="50.0" top="25.0" />
+               </HBox.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" prefHeight="50.0" prefWidth="50.0" text=" ">
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/iconTimKiem.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
          </children>
+         <padding>
+            <Insets left="50.0" />
+         </padding>
       </HBox>
+      <JFXButton fx:id="btnClose" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="1300.0" onMouseClicked="#handlButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/iconClose.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="btnBack" contentDisplay="CENTER" graphicTextGap="0.0" onMouseClicked="#handlButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/iconBack.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
    </children>
 </AnchorPane>

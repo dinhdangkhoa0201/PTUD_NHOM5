@@ -51,6 +51,7 @@ public class MenuControl implements Initializable{
 				alert.close();
 		}
 		else if(e.getSource() == btnQuanLyNhanVien) {
+			System.out.println("button qlnv");
 			try {
 				Node node = (Node) e.getSource();
 				Stage stage = (Stage) node.getScene().getWindow();
@@ -61,9 +62,12 @@ public class MenuControl implements Initializable{
 				stage.show();
 			} catch (Exception e2) {
 				// TODO: handle exception
+				e2.printStackTrace();
 			}
 		}
 		else if(e.getSource() == btnQuanLyKhachHang) {
+			System.out.println("btn qlkh");
+
 			try {
 				Node node = (Node) e.getSource();
 				Stage stage = (Stage) node.getScene().getWindow();
@@ -74,7 +78,9 @@ public class MenuControl implements Initializable{
 				stage.show();
 			} catch (Exception e2) {
 				// TODO: handle exception
+				e2.printStackTrace();
 			}
+
 		}
 
 	}

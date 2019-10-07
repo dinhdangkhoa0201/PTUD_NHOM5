@@ -31,7 +31,8 @@ public class LoginControl implements Initializable{
 	@FXML private JFXButton btnSignIn;
 	@FXML private JFXButton btnSignUp;
 	@FXML private JFXButton btnCloseWindown;
-
+	
+	
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {

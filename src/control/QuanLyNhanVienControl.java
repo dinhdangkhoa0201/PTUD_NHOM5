@@ -31,6 +31,7 @@ public class QuanLyNhanVienControl implements Initializable{
 	@FXML JFXButton btnBack;
 	@FXML JFXButton btnClose;
 	@FXML JFXButton btnReLoad;
+	@FXML JFXButton btnAdd;
 	
 	@FXML private TableView<NhanVien> tableNhanVien;
 	@FXML private TableColumn<NhanVien, String> col_manv;
@@ -137,6 +138,20 @@ public class QuanLyNhanVienControl implements Initializable{
 		else if(e.getSource() == btnReLoad) {
 			System.out.println("Reload");
 			loadDataFromDatabase();
+		}
+		else if(e.getSource() == btnAdd) {
+			try {
+				Node node = (Node) e.getSource();
+				Stage stage = (Stage) node.getScene().getWindow();
+				
+				Scene scene = new Scene(FXMLLoader.load(getClass().getResource("/gui/ThemKhachHang.fxml")));
+				stage.setScene(scene);
+				stage.show();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+				System.out.println("Button Add");
+			}
 		}
 	}
 

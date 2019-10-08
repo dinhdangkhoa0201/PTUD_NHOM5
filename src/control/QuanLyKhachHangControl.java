@@ -16,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
@@ -31,6 +32,7 @@ public class QuanLyKhachHangControl implements Initializable{
 	@FXML private JFXButton btnBack;
 	@FXML private JFXButton btnClose;
 	@FXML private JFXButton btnReLoad;
+	@FXML private JFXButton btnThem;	
 	
 	@FXML private TableView<KhachHang> tableKhachHang;
 	@FXML private TableColumn<KhachHang, String> col_makh;
@@ -133,6 +135,21 @@ public class QuanLyKhachHangControl implements Initializable{
 		else if(e.getSource() == btnReLoad) {
 			System.out.println("Reload");
 			loadDataFromDatabase();
+		}
+		else if(e.getSource() == btnThem) {
+			try {
+				Stage stage = new Stage();
+				FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/gui/ThemKhachHang.fxml"));
+				Parent root = fxmlLoader.load();
+				stage.setScene(new Scene(root));
+				stage.show();
+			} catch (Exception e2) {
+				// TODO: handle exception
+				System.out.println(e2.getMessage());
+				System.out.println("Button Add");
+				e2.printStackTrace();
+				
+			}
 		}
 	}
 	

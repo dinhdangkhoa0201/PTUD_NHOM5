@@ -13,7 +13,7 @@ public class Database {
 	public static void connect() {
 		String url = "jdbc:sqlserver://localhost:1433;databasename=HKVTravel;";
 		String user = "sa";
-		String password = "025825273a";
+		String password = "sapassword";
 		try {
 			con = DriverManager.getConnection(url, user, password);
 		} catch (Exception e) {

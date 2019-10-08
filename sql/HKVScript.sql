@@ -117,13 +117,14 @@ end
 go
 
 insert NhanVien values
-(dbo.PhatSinhMaNV(), N'Phan San Vô', 0, '1999/6/6', GETDATE(), N'Bạc Liêu','votech99@gmail.com', '1234567890')
+(dbo.PhatSinhMaNV(), N'Phan Sang Vô', 0, '1999/6/6', GETDATE(), N'Bạc Liêu','votech99@gmail.com', '1234567890')
 go
 
 insert UserPassword (UserNameNV, UserNameKH, Password) values
 (null, 1, '123456'),
 (1, null, '123456')
 go
+
 
 use master
 go

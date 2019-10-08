@@ -13,11 +13,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.ThemKhachHangControl">
    <children>
-      <Pane layoutY="200.0" prefHeight="600.0" prefWidth="600.0">
+      <Pane layoutX="10.0" layoutY="210.0" prefHeight="600.0" prefWidth="600.0">
          <children>
-            <VBox prefHeight="402.0" prefWidth="150.0">
+            <VBox prefHeight="401.0" prefWidth="150.0">
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <VBox.margin>
@@ -69,9 +69,9 @@
                   </ImageView>
                </children>
             </VBox>
-            <VBox layoutX="150.0" prefHeight="402.0" prefWidth="440.0">
+            <VBox layoutX="160.0" prefHeight="401.0" prefWidth="424.0">
                <children>
-                  <TextField prefHeight="25.0" prefWidth="440.0" promptText="Họ và Tên">
+                  <TextField fx:id="txtHoTen" prefHeight="25.0" prefWidth="440.0" promptText="Họ và Tên">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -79,17 +79,17 @@
                         <Insets top="30.0" />
                      </VBox.margin>
                   </TextField>
-                  <JFXComboBox prefHeight="45.0" prefWidth="213.0" promptText="Giới Tính" visibleRowCount="2">
+                  <JFXComboBox fx:id="cbxGioiTinh" prefHeight="45.0" prefWidth="213.0" promptText="Giới Tính" visibleRowCount="2">
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
                   </JFXComboBox>
-                  <JFXDatePicker prefHeight="43.0" prefWidth="214.0">
+                  <JFXDatePicker fx:id="txtDate" prefHeight="43.0" prefWidth="214.0">
                      <VBox.margin>
                         <Insets top="17.0" />
                      </VBox.margin>
                   </JFXDatePicker>
-                  <TextField prefHeight="40.0" prefWidth="427.0" promptText="Email">
+                  <TextField fx:id="txtEmail" prefHeight="40.0" prefWidth="427.0" promptText="Email">
                      <VBox.margin>
                         <Insets top="17.0" />
                      </VBox.margin>
@@ -97,7 +97,7 @@
                         <Font size="20.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="10.0" layoutY="214.0" prefHeight="40.0" prefWidth="427.0" promptText="Địa Chỉ">
+                  <TextField fx:id="txtDiaChi" layoutX="10.0" layoutY="214.0" prefHeight="40.0" prefWidth="427.0" promptText="Địa Chỉ">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -105,38 +105,23 @@
                         <Insets top="15.0" />
                      </VBox.margin>
                   </TextField>
-                  <TextField layoutX="10.0" layoutY="280.0" prefHeight="40.0" prefWidth="427.0" promptText="Số Điện Thoại">
+                  <TextField fx:id="txtSoDienThoai" layoutX="10.0" layoutY="280.0" prefHeight="40.0" prefWidth="427.0" promptText="Số Điện Thoại">
                      <font>
                         <Font size="20.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="15.0" />
                      </VBox.margin>
-                     <padding>
-                        <Insets left="100.0" right="100.0" />
-                     </padding>
                   </TextField>
                </children>
             </VBox>
-            <Pane layoutY="402.0" prefHeight="200.0" prefWidth="600.0">
+            <Pane layoutY="401.0" prefHeight="200.0" prefWidth="600.0">
                <children>
-                  <JFXButton contentDisplay="TOP" graphicTextGap="5.0" layoutX="379.0" layoutY="51.0" prefHeight="99.0" prefWidth="113.0" text="Xóa">
+                  <JFXButton fx:id="btnThem" contentDisplay="TOP" graphicTextGap="5.0" layoutX="244.0" layoutY="51.0" onMouseClicked="#handlButtonAction" prefHeight="99.0" prefWidth="113.0" text="Thêm">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../img/iconCapnhat.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton contentDisplay="TOP" graphicTextGap="5.0" layoutX="85.0" layoutY="51.0" prefHeight="99.0" prefWidth="113.0" text="Cập nhật">
-                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/iconCapnhat.png" />
+                              <Image url="@../img/iconAdd.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -148,7 +133,7 @@
             </Pane>
          </children>
       </Pane>
-      <Pane prefHeight="200.0" prefWidth="600.0">
+      <Pane layoutX="5.0" prefHeight="200.0" prefWidth="600.0">
          <children>
             <Pane layoutX="225.0" layoutY="25.0">
                <children>
@@ -162,9 +147,9 @@
                   <DropShadow height="22.48" offsetX="2.0" offsetY="2.0" radius="8.8875" width="15.07" />
                </effect>
             </Pane>
-            <JFXButton contentDisplay="CENTER" graphicTextGap="0.0" layoutX="531.0" layoutY="20.0" prefHeight="50.0" prefWidth="50.0" text=" ">
+            <JFXButton fx:id="btnClose" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="530.0" onMouseClicked="#handlButtonAction" prefHeight="50.0" prefWidth="50.0" text=" ">
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="50.0" fitWidth="50.0" onMouseClicked="#handlButtonAction" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/iconClose.png" />
                      </image>
